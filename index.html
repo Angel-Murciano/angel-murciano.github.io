@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora los mejores destinos en España!">
+
+    <title>ESPlorations</title>
+</head>
+
+<body>
+    <header style="text-align: center;">
+        <h1>ESPlorations</h1>
+        <p>¡Una guía para recorrer los mejores lugares de España!</p>
+    </header>
+
+    <nav>
+        <button>
+            <a href="#destinations">Destinos</a>
+        </button>
+        <button>
+            <a href="#sobre-nosotros">Sobre nosotros</a>
+        </button>
+        <button>
+            <a href="#postal">Manda tu postal</a>
+        </button>
+    </nav>
+
+    <hr>
+    
+    <main style="background-color: bisque;">
+        <section id="destinos">
+            <h1 style="text-align: center;">Destinos destacados</h1>
+            <div class="carousel" aria-label="Carrusel de destinos destacados">
+                <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+                <div class="carousel-slides">
+                    <div class="carousel-slide active">
+                        <img src="images/sagrada-familia.jpg" alt="La Sagrada Familia en Barcelona">
+                        <div class="carousel-caption">
+                            <h3>Barcelona</h3>
+                            <p>Visita la Sagrada Familia y aprende todo <br>sobre este maravilloso monumento situado en Barcelona.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/la-alhambra.jpeg" alt="La Alhambra en Granada">
+                        <div class="carousel-caption">
+                            <h3>Granada</h3>
+                            <p>Observa el conjunto palaciego de la Alhambra en Granada <br>y su importante historia dentro de España.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/acueducto-segovia.jpg" alt="Acueducto de Segovia">
+                        <div class="carousel-caption">
+                            <h3>Segovia</h3>
+                            <p>Aprende más de esta grandiosa estructura utilizada <br>para el transporte de agua situada en Segovia.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
+            </div>
+            <script>
+                const slides = document.querySelectorAll('.carousel-slide');
+                const prevBtn = document.querySelector('.carousel-btn.prev');
+                const nextBtn = document.querySelector('.carousel-btn.next');
+                let current = 0;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === index);
+                    });
+                }
+
+                prevBtn.addEventListener('click', () => {
+                    current = (current - 1 + slides.length) % slides.length;
+                    showSlide(current);
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    current = (current + 1) % slides.length;
+                    showSlide(current);
+                });
+            </script>
+            <nav class=""></nav>
+        
+        <section id="postal">
+            <h2>Manda tu postal</h2>
+            <p>¿Te gustaría poder viajar a alguno de estos sitios? ¡Mándanos <a href="postal.html">tu postal</a>!</p>
+        </section>
+    </main>
+</body>
+
+</html>

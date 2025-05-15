@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style-postal.css">
+    <title>Enviar Postal</title>
+</head>
+<body>
+    <h1 style="color:red;">Enviar una Postal</h1>
+    <form action="#" method="post">
+        <label for="nombre">Nombre<span style="color: darkred;">*</span>:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email<span style="color: darkred;">*</span>:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje (opcional):</label>
+        <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+        <label>Selecciona una imagen para la postal<span style="color: darkred;">*</span>:</label>
+        <div class="imagenes">
+            <label>
+                <input type="radio" name="imagen" value="familia.jpg" required style="display:none;">
+                <img src="images/sagrada-familia.jpg" alt="sagrada familia" onclick="this.previousElementSibling.checked=true;">
+            </label>
+            <label>
+                <input type="radio" name="imagen" value="alhambra.jpg" style="display:none;">
+                <img src="images/la-alhambra.jpeg" alt="la alhambra" onclick="this.previousElementSibling.checked=true;">
+            </label>
+            <label>
+                <input type="radio" name="imagen" value="acueducto.jpg" style="display:none;">
+                <img src="images/acueducto-segovia.jpg" alt="acueducto segovia" onclick="this.previousElementSibling.checked=true;">
+            </label>
+        </div>
+
+        <button type="submit" style="margin-top:20px;">Enviar Postal</button>
+    </form>
+</body>
+</html>
