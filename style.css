@@ -12,8 +12,7 @@ header {
     color: white;
 }
 footer {
-    padding: 1rem;
-    background-color: #ce0505;
+    text-align: center;
 }
 nav a {
     margin-right: 1rem;
